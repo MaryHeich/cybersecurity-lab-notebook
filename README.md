@@ -7,7 +7,8 @@ Bienvenido a mi repositorio de entrenamiento para **Analista SOC**. Aquí docume
 ---
 
 ## 🛠️ Stack Tecnológico & Herramientas
-* **Sistemas Operativos:** Ubuntu Linux, Ubuntu Server, VirtualBox.
+* **Sistemas Operativos:** Ubuntu Linux, Ubuntu Server, VirtualBox, SSH.
+* **Plataformas de aprendizaje:** Cisco Networking Academy.
 * **Redes & Análisis:** Wireshark, CLI Net-Tools.
 * **Seguridad & Laboratorios:** OverTheWire, Wazuh, Splunk, MITRE ATT&CK.
 * **Documentación & OPSEC:** GitHub, Notion.
@@ -31,4 +32,15 @@ Bienvenido a mi repositorio de entrenamiento para **Analista SOC**. Aquí docume
 | `cat "file name"`| Lee un archivo con espacios en el nombre | Analizar logs o archivos con nombres no estandarizados |
 
 ---
+
+### Análisis de Logs y Búsqueda Forense
+| Comando | Descripción | Caso de Uso en SOC |
+| :--- | :--- | :--- |
+| `file <archivo>` | Determina el tipo real de archivo (*magic bytes*) | Detectar artefactos maliciosos camuflados con extensiones falsas |
+| `find <ruta> -size <bytes>` | Búsqueda por atributos de sistema (tamaño, permisos, usuario) | Localizar archivos sospechosos o modificados en el servidor |
+| `grep "patrón" <archivo>` | Filtra líneas de texto que coincidan con un término | Identificar IoCs, IPs maliciosas o eventos clave dentro de logs |
+| `2>/dev/null` | Redirige la salida de error estándar (STDERR) | Silenciar errores de "permiso denegado" para reducir ruido |
+
+---
+
 *Prototipo de Portafolio en construcción continua.*
