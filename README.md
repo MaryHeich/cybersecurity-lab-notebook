@@ -1,46 +1,55 @@
 # 🛡️ SOC Analyst Training & Lab Notebook
 
-Bienvenido a mi repositorio de entrenamiento para **Analista SOC**. Aquí documento mis proyectos prácticos, análisis de tráfico de red, operaciones SIEM e investigación de amenazas.
+Welcome to my training repository for **SOC Analyst**. Here I document my practical projects, network traffic analysis, SIEM operations, and threat research.
 
-📌 **Cuaderno de Bitácora En Vivo (Notion):** [Haz clic aquí para ver mis capturas y reportes detallados](https://spicy-clownfish-847.notion.site/SOC-Analyst-Lab-Notebook-3ef29add16b480cf915ec90482ca371d?source=copy_link)
-
----
-
-## 🛠️ Stack Tecnológico & Herramientas
-* **Sistemas Operativos:** Ubuntu Linux, Ubuntu Server, VirtualBox, SSH.
-* **Plataformas de aprendizaje:** Cisco Networking Academy.
-* **Redes & Análisis:** Wireshark, CLI Net-Tools.
-* **Seguridad & Laboratorios:** OverTheWire, Wazuh, Splunk, MITRE ATT&CK.
-* **Documentación & OPSEC:** GitHub, Notion.
+📌 **Live Lab Notebook (Notion):** [Click here to view my screenshots and detailed reports](https://spicy-clownfish-847.notion.site/SOC-Analyst-Lab-Notebook-3ef29add16b480cf915ec90482ca371d?source=copy_link)
 
 ---
 
-## 📚 Fase 1: Comandos Esenciales de Linux & Redes (Cheatsheet)
+## 🛠️ Tech Stack & Tools
+* **Operating Systems:** Ubuntu Linux, Ubuntu Server, VirtualBox, SSH.
+* **Learning Platform:** Cisco Networking Academy.
+* **Networking & Analysis:** Wireshark, CLI Net-Tools.
+* **Security & Labs:** OverTheWire, Wazuh, Splunk, MITRE ATT&CK.
+* **Documentation & OPSEC:** GitHub, Notion.
 
-### Diagnóstico de Red (Capa 3 & 7)
-| Comando | Descripción | Caso de Uso en SOC |
+---
+
+## 📚 Phase 1: Essential Linux & Networking Commands (Cheatsheet)
+
+### Network Diagnostics (Layer 3 & Layer 7)
+| Command | Description | SOC Use Case |
 | :--- | :--- | :--- |
-| `ip a` | Muestra interfaces y direcciones IP | Identificar IP local e interfaces de red activas |
-| `ping -c 4 <IP>` | Envía paquetes ICMP Echo Request | Verificar conectividad básica con un host |
-| `curl -I <URL>` | Trae solo las cabeceras HTTP/S | Inspeccionar respuestas del servidor web sin descargar el cuerpo |
+| `ip a` | Displays interfaces and IP addresses | Identify local IP and active network interfaces |
+| `ping -c 4 <IP>` | Sends ICMP Echo Request packets | Verify basic connectivity with a target host |
+| `curl -I <URL>` | Fetches only HTTP/S response headers | Inspect web server responses without downloading the body |
 
-### Navegación y Manipulación de Archivos
-| Comando | Descripción | Caso de Uso en SOC |
+### File Navigation & Manipulation
+| Command | Description | SOC Use Case |
 | :--- | :--- | :--- |
-| `ls -la` | Lista todos los archivos, incluidos ocultos (`.`) | Detectar malware o scripts ocultos en directorios |
-| `cat ./-` | Lee un archivo cuyo nombre es un guion | Evitar la interpretación del guion como bandera de comando |
-| `cat "file name"`| Lee un archivo con espacios en el nombre | Analizar logs o archivos con nombres no estandarizados |
+| `ls -la` | Lists all files, including hidden (`.`) | Detect malware or hidden scripts in directories |
+| `cat ./-` | Reads a file whose name is a dash | Avoid interpreting the dash as a command flag |
+| `cat "file name"`| Reads a file with spaces in the name | Analyze logs or files with non-standard naming conventions |
 
 ---
 
-### Análisis de Logs y Búsqueda Forense
-| Comando | Descripción | Caso de Uso en SOC |
+### Log Analysis & Forensic Search
+| Command | Description | SOC Use Case |
 | :--- | :--- | :--- |
-| `file <archivo>` | Determina el tipo real de archivo (*magic bytes*) | Detectar artefactos maliciosos camuflados con extensiones falsas |
-| `find <ruta> -size <bytes>` | Búsqueda por atributos de sistema (tamaño, permisos, usuario) | Localizar archivos sospechosos o modificados en el servidor |
-| `grep "patrón" <archivo>` | Filtra líneas de texto que coincidan con un término | Identificar IoCs, IPs maliciosas o eventos clave dentro de logs |
-| `2>/dev/null` | Redirige la salida de error estándar (STDERR) | Silenciar errores de "permiso denegado" para reducir ruido |
+| `file <file>` | Determines the actual file type (*magic bytes*) | Detect malicious artifacts camouflaged with fake extensions |
+| `find <path> -size <bytes>` | Search by system attributes (size, permissions, user) | Locate suspicious or modified files on a compromised server |
+| `grep "pattern" <file>` | Filters text lines that match a specific term | Identify IoCs, malicious IPs, or key events within raw logs |
+| `2>/dev/null` | Redirects standard error output (STDERR) | Silence "permission denied" errors to reduce terminal noise |
 
 ---
 
-*Prototipo de Portafolio en construcción continua.*
+### Data Manipulation & Payload Deobfuscation
+| Command | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `sort file \| uniq -u` | Filters and displays only unique lines | Isolate anomalous single-occurrence log events |
+| `strings <file>` | Extracts printable ASCII strings from binaries | Perform basic static analysis on suspicious executables |
+| `base64 -d <file>` | Decodes Base64 encoded data | Deobfuscate encoded malicious payloads (e.g., PowerShell) |
+| `tr 'A-Za-z' 'N-ZA-Mn-za-m'` | Translates characters using substitution | Reverse basic ROT13 obfuscation schemes |
+
+---
+*Portfolio prototype in continuous development.*
