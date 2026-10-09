@@ -52,4 +52,15 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 | `tr 'A-Za-z' 'N-ZA-Mn-za-m'` | Translates characters using substitution | Reverse basic ROT13 obfuscation schemes |
 
 ---
+
+### Advanced Payload Extraction & Network Services
+| Command | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `xxd -r <file>` | Reverses a hex dump into a binary file | Reconstructing obfuscated malware payloads |
+| `tar -xf <archive>` | Extracts files from a tar archive | Unpacking bundled malicious artifacts |
+| `ssh -i <key> <user>@<IP>` | Authenticates using a private identity key | Pivoting across servers and identifying exposed credentials |
+| `nc <host> <port>` | Reads/writes data across TCP/UDP connections | Interacting with open ports, banner grabbing, and testing C2 channels |
+
+---
+
 *Portfolio prototype in continuous development.*
