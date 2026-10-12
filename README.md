@@ -15,7 +15,7 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
-## 📚 Phase 1: Essential Linux & Networking Commands (Cheatsheet)
+## 📚 Phase 1: Essential Linux & Networking Commands
 
 ### Network Diagnostics (Layer 3 & Layer 7)
 | Command | Description | SOC Use Case |
@@ -60,6 +60,18 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 | `tar -xf <archive>` | Extracts files from a tar archive | Unpacking bundled malicious artifacts |
 | `ssh -i <key> <user>@<IP>` | Authenticates using a private identity key | Pivoting across servers and identifying exposed credentials |
 | `nc <host> <port>` | Reads/writes data across TCP/UDP connections | Interacting with open ports, banner grabbing, and testing C2 channels |
+
+---
+
+## 📚 Phase 2: Network Traffic Analysis & Protocol Inspection
+
+### Network Packet Analysis & Wireshark Display Filters
+| Command / Filter | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `wireshark &` | Launches the Wireshark GUI packet analyzer in the background | Initiating live network interface capture and packet forensics |
+| `http` | Display filter isolating unencrypted HTTP traffic | Detecting cleartext protocols, session IDs, and unencrypted credentials |
+| `tls` or `ssl` | Display filter isolating TLS handshake packets | Analyzing secure traffic metadata (e.g., SNI) without breaking encryption |
+| **Follow TCP Stream** | Reassembles a complete client-server TCP conversation | Reconstructing HTTP requests/responses, payload analysis, and inspecting cleartext headers/User-Agents |
 
 ---
 
