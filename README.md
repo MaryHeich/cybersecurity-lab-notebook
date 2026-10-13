@@ -75,4 +75,13 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+### Command-Line Packet Analysis (Tshark)
+| Command | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `tshark -i <interface> -c <num> -w <file>` | Captures a specific number of live packets to a PCAP file | Performing headless network packet capture on remote Linux servers |
+| `tshark -r <file> -Y "<filter>"` | Reads a PCAP file and applies display filters | Offline forensic analysis and protocol filtering without a GUI |
+| `tshark -r <file> -T fields -e <field>` | Extracts specific packet header fields in tabular format | Automated log parsing, IOC extraction, and rapid incident triage |
+
+---
+
 *Portfolio prototype in continuous development.*
