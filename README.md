@@ -84,4 +84,13 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+### TLS Traffic Analysis & Metadata Extraction
+| Command / Filter | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `tls.handshake.type == 1` | Wireshark display filter for TLS `Client Hello` packets | Isolating initial session negotiation parameters and client capabilities |
+| `tls.handshake.extensions_server_name` | Filter/Field targeting the Server Name Indication (SNI) | Extracting target domain names from encrypted HTTPS sessions |
+| `tshark -r <file> -Y "tls.handshake.type == 1" -T fields -e tls.handshake.extensions_server_name` | Extracts requested SNI domains from a PCAP file via CLI | Automated threat hunting for malicious C2 domains in encrypted traffic |
+
+---
+
 *Portfolio prototype in continuous development.*
