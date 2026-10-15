@@ -93,4 +93,13 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+### HTTP Traffic Analysis & Web Inspection
+| Command / Filter | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `http.request.method == "GET"` | Wireshark display filter for HTTP GET requests | Isolating resource retrieval requests in web traffic captures |
+| `http.response.code >= 400` | Filters HTTP responses returning client/server errors | Triaging directory brute-forcing, missing resources, or access denials |
+| `tshark -r <file> -T fields -e http.request.uri -e http.user_agent` | Extracts requested URIs and User-Agent strings from PCAP | Rapid web log forensic parsing, IoC extraction, and threat hunting |
+
+---
+
 *Portfolio prototype in continuous development.*
