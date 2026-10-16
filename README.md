@@ -102,4 +102,13 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+### Reconnaissance & Port Scanning Analysis
+| Command / Filter | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `tcp.flags.syn == 1 && tcp.flags.ack == 0` | Wireshark filter for TCP SYN (Stealth) scan packets | Detecting half-open connection attempts and network footprinting |
+| `tcp.flags.reset == 1` | Filters TCP RST flags | Analyzing connection teardowns, closed port responses, or firewall blocks |
+| `tshark -r <file> -Y "tcp.flags.syn == 1 && tcp.flags.ack == 0" -T fields -e ip.src -e tcp.dstport` | Extracts scanning sources and targeted destination ports via CLI | Rapid IOC extraction and automated hunt for internal/external port mappers |
+
+---
+
 *Portfolio prototype in continuous development.*
