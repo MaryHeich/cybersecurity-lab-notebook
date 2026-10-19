@@ -111,4 +111,13 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+### Phase 3: Log Analysis & SIEM Fundamentals
+#### Linux Log Analysis (`/var/log/auth.log`)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep "Failed password" /var/log/auth.log` | Filters all failed authentication attempts in Linux | Identifying potential authentication anomalies and login failures |
+| `grep "Failed password" /var/log/auth.log \| awk '{print $(NF-3)}' \| sort \| uniq -c \| sort -nr` | Aggregates and counts failed login attempts grouped by source IP | Detecting brute-force actors and IP-based credential attack patterns |
+
+---
+
 *Portfolio prototype in continuous development.*
