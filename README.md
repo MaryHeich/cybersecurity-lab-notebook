@@ -120,4 +120,13 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Web Server Log Analysis (Nginx / Apache Format)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep " 404 " access.log \| awk '{print $1}' \| sort \| uniq -c \| sort -nr` | Isolates and counts sources generating HTTP 404 errors from access logs | Detecting directory scanning, fuzzing, and web recon tools |
+| `grep -i "union.*select" access.log` | Searches access logs for SQL injection payload signatures | Identifying database enumeration and exploitation attempts |
+| `grep -i "<script>" access.log` | Searches access logs for Cross-Site Scripting (XSS) script tags | Detecting reflected and stored XSS attack attempts in web queries |
+
+---
+
 *Portfolio prototype in continuous development.*
