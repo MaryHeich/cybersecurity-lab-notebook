@@ -129,4 +129,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Windows Event Log Analysis (Security.evtx)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep '"event_id": 4625' security_log.json` | Filters Windows Security logs for failed logon events | Detecting brute-force and password spraying attacks |
+| `grep '"event_id": 4720' security_log.json` | Filters logs for local or domain account creation events | Identifying persistence mechanisms (MITRE T1136) |
+
+---
+
 *Portfolio prototype in continuous development.*
