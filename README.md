@@ -137,4 +137,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### SIEM Architecture & Centralized Logging
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `logger -p auth.warning "MESSAGE"` | Injects custom warning log messages into the system logger | Testing SIEM agent log ingestion and syslog forwarding rules |
+| `journalctl -t logger -n 5 --no-pager` | Queries systemd journal specifically for custom logger events | Validating local log generation before forwarding to SIEM |
+
+---
+
 *Portfolio prototype in continuous development.*
