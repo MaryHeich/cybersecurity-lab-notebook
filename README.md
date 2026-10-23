@@ -111,8 +111,9 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
-### Phase 3: Log Analysis & SIEM Fundamentals
-#### Linux Log Analysis (`/var/log/auth.log`)
+## Phase 3: Log Analysis & SIEM Fundamentals
+
+### Linux Log Analysis (`/var/log/auth.log`)
 | Command / Pipeline | Description | SOC Use Case |
 | :--- | :--- | :--- |
 | `grep "Failed password" /var/log/auth.log` | Filters all failed authentication attempts in Linux | Identifying potential authentication anomalies and login failures |
@@ -120,7 +121,7 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
-#### Web Server Log Analysis (Nginx / Apache Format)
+### Web Server Log Analysis (Nginx / Apache Format)
 | Command / Pipeline | Description | SOC Use Case |
 | :--- | :--- | :--- |
 | `grep " 404 " access.log \| awk '{print $1}' \| sort \| uniq -c \| sort -nr` | Isolates and counts sources generating HTTP 404 errors from access logs | Detecting directory scanning, fuzzing, and web recon tools |
@@ -129,7 +130,7 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
-#### Windows Event Log Analysis (Security.evtx)
+### Windows Event Log Analysis (Security.evtx)
 | Command / Pipeline | Description | SOC Use Case |
 | :--- | :--- | :--- |
 | `grep '"event_id": 4625' security_log.json` | Filters Windows Security logs for failed logon events | Detecting brute-force and password spraying attacks |
@@ -137,11 +138,21 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
-#### SIEM Architecture & Centralized Logging
+### SIEM Architecture & Centralized Logging
 | Command / Pipeline | Description | SOC Use Case |
 | :--- | :--- | :--- |
 | `logger -p auth.warning "MESSAGE"` | Injects custom warning log messages into the system logger | Testing SIEM agent log ingestion and syslog forwarding rules |
 | `journalctl -t logger -n 5 --no-pager` | Queries systemd journal specifically for custom logger events | Validating local log generation before forwarding to SIEM |
+
+---
+
+## Phase 4: Network Security Monitoring & IDS
+
+### IDS Alert Analysis (Suricata / Snort Fast Logs)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep "Priority: 1" fast.log` | Filters NIDS alert logs for critical priority signatures | Isolating high-severity network intrusions and active malware |
+| `awk -F '{TCP} ' '{print $2}' fast.log` | Parses network log delimiters to isolate source/destination endpoints | Extracting IOC source IPs from network intrusion alerts |
 
 ---
 
