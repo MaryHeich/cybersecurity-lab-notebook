@@ -156,4 +156,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Network Capture & Inspection (`tcpdump`)
+| Command / Description | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `sudo tcpdump -i <interface> -nn -c 5` | Captures raw packets on a specific interface with numeric output | Real-time network telemetry inspection and quick triage |
+| `sudo tcpdump -nn -X -r capture.pcap` | Reads a binary PCAP file and prints packets in Hex/ASCII | Forensic payload analysis and signature verification |
+
+---
+
 *Portfolio prototype in continuous development.*
