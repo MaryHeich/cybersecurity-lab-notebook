@@ -164,4 +164,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Packet Analysis & PCAP Forensics (`tshark`)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `tshark -r capture.pcap -q -z conv,ip` | Generates a summary table of IP conversations from a PCAP | Rapidly identifying talking endpoints during network incident triage |
+| `tshark -r capture.pcap -Y "http.request" -T fields -e ip.src -e http.request.uri` | Extracts specific protocol fields based on display filters | Isolating malicious URIs and web-based C2 activity from traffic logs |
+
+---
+
 *Portfolio prototype in continuous development.*
