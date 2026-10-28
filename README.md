@@ -172,4 +172,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### DNS Telemetry & Threat Detection
+| Analysis Focus / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep "Priority: 1" dns_alerts.log` | Isolates critical alerts related to DNS exfiltration and tunneling | Rapidly detecting covert C2 channels bypassing firewall rules |
+| High-Entropy & TXT Record Monitoring | Analysis of unusual domain query lengths and record types | Spotting data exfiltration disguised within legitimate DNS queries |
+
+---
+
 *Portfolio prototype in continuous development.*
