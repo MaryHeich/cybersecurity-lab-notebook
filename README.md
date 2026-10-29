@@ -180,4 +180,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Web Access Log Analysis & Injection Detection
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep -E -i "OR%201=1\|etc/passwd" web_access.log` | Filters web access logs for common SQLi and Path Traversal patterns | Identifying targeted web application attack vectors |
+| `grep -E "shell\.php\|\?cmd=" web_access.log \| grep " 200 "` | Correlates potential Web Shell execution with successful HTTP responses | Spotting post-exploitation command execution on compromised web servers |
+
+---
+
 *Portfolio prototype in continuous development.*
