@@ -188,4 +188,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Firewall Log Analysis & Reconnaissance Detection
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep "FW_DENY" firewall.log \| awk -F 'SRC=' '{print $2}' \| awk '{print $1}' \| sort \| uniq -c` | Aggregates count of blocked connections grouped by source IP | Identifying active port scans and noisy network reconnaissance |
+| `grep "SRC=<IP>" firewall.log \| awk -F 'DPT=' '{print $2}' \| awk '{print $1}'` | Extracts targeted destination ports for a specific source IP | Mapping the scope of port enumeration during threat triage |
+
+---
+
 *Portfolio prototype in continuous development.*
