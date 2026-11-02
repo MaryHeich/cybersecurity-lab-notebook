@@ -196,4 +196,14 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+## Phase 5: Endpoint Telemetry, SIEM Querying & Threat Hunting
+
+#### Linux Endpoint Telemetry (`auditd`)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep 'a0="nc"' audit_exec.log` | Filters audit execution logs for specific network tool usage | Detecting unauthorized data transfer or reverse shell setup |
+| `grep -o 'a0="[^"]*"' audit_exec.log` | Extracts binary names and primary execution arguments from `EXECVE` logs | Rapidly auditing all executed programs during host triage |
+
+---
+
 *Portfolio prototype in continuous development.*
