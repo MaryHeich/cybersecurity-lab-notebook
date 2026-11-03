@@ -206,4 +206,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Windows Endpoint Telemetry (Event ID 4688)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep -E "powershell.*-enc\|vssadmin" win_process.log` | Filters Windows logs for encoded PowerShell or shadow copy deletion | Detecting post-exploitation obfuscation and ransomware preparation |
+| `awk -F 'CommandLine=' '{print $2}' win_process.log` | Extracts full command-line execution strings from process telemetry | Auditing complete execution parameters during host triage |
+
+---
+
 *Portfolio prototype in continuous development.*
