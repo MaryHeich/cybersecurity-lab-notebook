@@ -214,4 +214,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Sysmon Telemetry & Persistence Detection
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep -E "Sysmon_ID=13" sysmon_events.log \| grep -i "CurrentVersion\\\\Run"` | Filters Sysmon registry events for modifications to autostart Run keys | Spotting host persistence attempts via Windows Registry |
+| `grep -i "reg add" sysmon_events.log \| grep -i "Users\\\\Public"` | Identifies command-line execution adding registry persistence to public paths | Detecting malicious persistence pointing to suspicious user directories |
+
+---
+
 *Portfolio prototype in continuous development.*
