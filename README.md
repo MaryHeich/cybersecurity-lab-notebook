@@ -222,4 +222,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Process-to-Network Telemetry (Sysmon Event ID 3)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep -E "Users\\\\Public\|Windows\\\\Temp" sysmon_net.log` | Filters Sysmon network events for outbound traffic originating from volatile user directories | Identifying potential C2 beaconing or data exfiltration from staged binaries |
+| `grep "Sysmon_ID=3" sysmon_net.log \| awk -F 'Image=' '{print $2}'` | Extracts executable image, PID, and target destination IP | Correlating network alerts to exact process IDs during host containment |
+
+---
+
 *Portfolio prototype in continuous development.*
