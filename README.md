@@ -230,4 +230,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### SIEM Querying Fundamentals (SPL / KQL Logic)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep '"event_id":4688' siem_events.json \| grep 'powershell.exe'` | Emulates KQL syntax (`event.code: 4688 and process.name: powershell.exe`) | Filtering specific endpoint execution events in structured SIEM logs |
+| `awk -F '"user":"' '{print $2}' siem_events.json \| sort \| uniq -c` | Emulates SPL aggregation (`... \| stats count by user`) | Summarizing activity volume per account to spot anomalous activity |
+
+---
+
 *Portfolio prototype in continuous development.*
