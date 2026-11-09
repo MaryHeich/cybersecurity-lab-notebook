@@ -238,4 +238,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Threat Hunting & Sigma Rule Logic
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep '"EventID":4688' sigma_events.json \| grep -i "ExecutionPolicy Bypass"` | Matches Sigma logic detecting PowerShell execution policy evasion flags | Hunting for unauthorized script execution bypassing admin controls |
+| `grep -i "rundll32.exe" sigma_events.json \| grep -i "Users\\\\Public"` | Filters logs for signed binary proxy execution loading DLLs from public paths | Spotting Living-off-the-Land (LOLBin) execution techniques |
+
+---
+
 *Portfolio prototype in continuous development.*
