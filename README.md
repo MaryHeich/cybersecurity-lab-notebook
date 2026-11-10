@@ -246,4 +246,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Authentication Log Analysis (Event ID 4625)
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep "ID=4625" auth_events.log \| awk -F 'SourceIp=' '{print $2}' \| sort \| uniq -c` | Summarizes failed logon attempts grouped by source IP address | Spotting high-volume traditional brute force attempts |
+| `grep "ID=4625" auth_events.log \| awk -F 'SourceIp=' '{print $2}' \| uniq -c` | Groups failed logons by source IP and target user account | Detecting password spraying attacks across multiple accounts |
+
+---
+
 *Portfolio prototype in continuous development.*
