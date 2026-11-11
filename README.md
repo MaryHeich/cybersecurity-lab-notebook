@@ -254,4 +254,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### IOC Extraction & Alert Triage
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep -E "Severity=High\|Severity=Critical" alerts_triage.log` | Filters security alerts to isolate high-priority actionable events | Prioritizing daily alert queues during active monitoring |
+| `grep -E "Severity=High" alerts_triage.log \| awk -F 'DestIP=' '{print $2}'` | Extracts destination IP addresses and file hashes for threat intelligence lookup | Harvesting clean IOCs for firewall blocking and malware analysis |
+
+---
+
 *Portfolio prototype in continuous development.*
