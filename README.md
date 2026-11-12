@@ -262,4 +262,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Incident Scoping & Lateral Movement Triage
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `grep "Source=192.168.1.50" incident_scope.log \| grep "Action=LateralMovement"` | Filters logs to isolate lateral movement originating from a compromised host | Tracking adversary expansion across internal subnets |
+| `grep "Source=192.168.1.50" incident_scope.log \| awk -F 'Target=' '{print $2}'` | Extracts impacted target hosts and protocols used (SMB/WinRM) | Assessing the blast radius to determine emergency network containment scope |
+
+---
+
 *Portfolio prototype in continuous development.*
