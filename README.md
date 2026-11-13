@@ -270,4 +270,12 @@ Welcome to my training repository for **SOC Analyst**. Here I document my practi
 
 ---
 
+#### Incident Timeline Reconstruction & Escalation
+| Command / Pipeline | Description | SOC Use Case |
+| :--- | :--- | :--- |
+| `sort raw_incident.log` | Orders multi-source security telemetry chronologically by ISO-8601 timestamps | Reconstructing the exact adversary kill chain during incident triage |
+| `sort raw_incident.log \| awk '{print $1, "->", $4, $5, $6, $7}'` | Formats a concise timestamp-to-action summary from raw logs | Generating clear, actionable timelines for Tier-2 escalation tickets |
+
+---
+
 *Portfolio prototype in continuous development.*
